@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './features/auth/auth.component';
@@ -22,6 +23,7 @@ import { AuthComponent } from './features/auth/auth.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatInputModule,
+    MatProgressBarModule,
     MatFormFieldModule,
     MatButtonModule,
     MatCardModule,

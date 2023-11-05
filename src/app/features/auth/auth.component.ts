@@ -138,6 +138,34 @@ export class AuthComponent {
   toggleResetSuccess() {
     this.resetSuccess = !this.resetSuccess;
   }
+  calculatePasswordStrength(): number {
+    const password = this.registrationInfo.password;
+    const minLength = 8; // Minimum length requirement
+
+    let strength = 0;
+
+    // Check for uppercase letters
+    if (/[A-Z]/.test(password)) {
+      strength += 25;
+    }
+
+    // Check for lowercase letters
+    if (/[a-z]/.test(password)) {
+      strength += 25;
+    }
+
+    // Check for numbers
+    if (/\d/.test(password)) {
+      strength += 25;
+    }
+
+    // Check for minimum length
+    if (password.length >= minLength) {
+      strength += 25;
+    }
+
+    return strength;
+  }
   ngOnDestroy() {
     this.subscriptions.forEach((subscription) => subscription.unsubscribe());
   }

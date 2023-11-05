@@ -54,10 +54,11 @@
 
             <p class="register-label2">hasło</p>
 
+            <mat-progress-bar class="progress-bar" color="accent" mode="determinate"
+              [value]="calculatePasswordStrength()"></mat-progress-bar>
             <mat-form-field appearance="outline">
               <input matInput placeholder="Password" type="password" required minlength="6" name="password" ngModel
                 [(ngModel)]="registrationInfo.password">
-              <!-- <mat-error *ngIf="registrationPasswordError">{{ registrationPasswordError }}</mat-error> -->
               <mat-error class="mat-error mat-error-reset" *ngIf="registrationPasswordError">
                 <h2 class="mat-h3 mat-error-heading" color="accent">Wpisz hasło.</h2>
                 <p class="mat-h3 mat-error-text">{{ registrationPasswordError }}</p>
