@@ -1,0 +1,239 @@
+.login-page {
+  top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #f7f7f7;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.tabs {
+  position: relative;
+  height: 460px;
+}
+
+mat-card {
+  width: 40%;
+  margin: 10% auto;
+  border-radius: 0;
+  border: 1px solid #8e8e8e;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+mat-form-field,
+mat-checkbox {
+  width: 45%;
+  display: block;
+  margin: auto;
+}
+mat-card-content {
+  margin-top: 20px;
+}
+mat-form-field {
+  font-size: 15px;
+  transform: scale(0.8);
+}
+mat-icon {
+  transform: scale(1.3);
+}
+
+.login-button {
+  display: block;
+  width: 140px;
+  height: 50px;
+  margin: 20px auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.icon-question {
+  position: absolute;
+  right: 205px;
+  top: 94px;
+  transform: scale(1.8);
+}
+.icon-error1 {
+  position: absolute;
+  right: 205px;
+  top: 54px;
+  transform: scale(1.8);
+}
+.icon-error2 {
+  position: absolute;
+  right: 205px;
+  top: 133px;
+  transform: scale(1.8);
+}
+.icon-error3 {
+  position: absolute;
+  right: 205px;
+  top: 210px;
+  transform: scale(1.8);
+}
+
+.login-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.mat-error {
+  background-color: #ffffff;
+  padding: 0 20px;
+  width: 160px;
+  height: auto;
+  border-radius: 0;
+  border: 1px solid #8e8e8e;
+  background-color: #ffffff;
+  box-shadow: none;
+}
+.mat-error-reset {
+  position: absolute;
+  right: -270px;
+  top: -56px;
+}
+.mat-error-heading {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #8e8e8e;
+}
+.mat-error-text {
+  line-height: 1.3;
+}
+
+.button-to-reset {
+  cursor: pointer;
+  position: absolute;
+  right: 250px;
+  top: 173px;
+}
+.button-to-login {
+  cursor: pointer;
+  position: absolute;
+  right: 250px;
+  top: 135px;
+}
+
+.reset-label {
+  position: absolute;
+  right: 418px;
+  top: 60px;
+  color: #8e8e8e;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.login-label1 {
+  position: absolute;
+  right: 464px;
+  top: 25px;
+  color: #8e8e8e;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.login-label2 {
+  position: absolute;
+  right: 422px;
+  top: 102px;
+  color: #8e8e8e;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.register-label1 {
+  position: absolute;
+  right: 423px;
+  top: 25px;
+  color: #8e8e8e;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.register-label2 {
+  position: absolute;
+  right: 465px;
+  top: 102px;
+  color: #8e8e8e;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.register-label3 {
+  position: absolute;
+  right: 465px;
+  top: 181px;
+  color: #8e8e8e;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.icon-question:hover + .info-field {
+  display: block;
+}
+
+.info-field {
+  position: absolute;
+  right: 27px;
+  top: 84px;
+  background-color: #ffffff;
+  padding: 18px 16px 0 16px;
+  width: 128px;
+  height: auto;
+  border-radius: 0;
+  border: 1px solid #8e8e8e;
+  background-color: #ffffff;
+  box-shadow: none;
+  display: none;
+}
+.mat-question-heading {
+  line-height: 1.2;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #8e8e8e;
+  margin-bottom: 5px;
+}
+.mat-question-text {
+  line-height: 1.3;
+  font-size: 13px;
+}
+
+.reset-success-message {
+  margin-top: 100px;
+  margin-left: 250px;
+  color: #8e8e8e;
+  font-weight: 400;
+}
+.horizontal-line {
+  width: 41.5%;
+  height: 2px;
+  background-color: #c7c7c7;
+  position: absolute;
+  top: 46px;
+  right: 217px;
+}
+.horizontal-line-erase {
+  width: 41.5%;
+  height: 2px;
+  background-color: #ffffff;
+  position: absolute;
+  top: 46px;
+  right: 217px;
+  z-index: 100;
+}

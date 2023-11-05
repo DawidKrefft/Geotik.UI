@@ -1,0 +1,126 @@
+<div class="login-page">
+  <mat-card>
+    <div class="horizontal-line" *ngIf="!resetPasswordMode"></div>
+    <div class="horizontal-line-erase" *ngIf="resetPasswordMode"></div>
+
+    <mat-tab-group color="accent" mat-stretch-tabs="false" mat-align-tabs="center" class="tabs"
+      *ngIf="!resetPasswordMode">
+      <mat-tab label="ㅤZalogujㅤ">
+        <mat-card-content>
+          <form (ngSubmit)="onLogin()">
+            <p class="login-label1">hasło</p>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Password" type="password" required minlength="6" name="password" ngModel
+                [(ngModel)]="loginInfo.password">
+              <mat-icon *ngIf="loginError" matSuffix>clear</mat-icon>
+            </mat-form-field>
+
+            <p class="login-label2">login/e-mail</p>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Email" required name="email" ngModel [(ngModel)]="loginInfo.email">
+              <mat-icon *ngIf="loginError" matSuffix>clear</mat-icon>
+            </mat-form-field>
+
+            <p mat-typography class="button-to-reset" (click)="toggleResetPasswordMode()">
+              zresetuj hasło
+            </p>
+
+            <p class="login-error" *ngIf="!loginError">ㅤ</p>
+            <p class="login-error" *ngIf="loginError">{{ loginError }}</p>
+
+            <button type="submit" mat-raised-button color="primary" class="login-button" *ngIf="!resetPasswordMode">
+              Sign In
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-tab>
+
+      <mat-tab label="Zarejestruj">
+        <mat-card-content>
+          <form (ngSubmit)="onRegister()">
+
+            <p class="register-label1">login/e-mail</p>
+
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Email" required name="email" ngModel [(ngModel)]="registrationInfo.email">
+              <mat-error class="mat-error mat-error-reset" *ngIf="registrationEmailError">
+                <h2 class="mat-h3 mat-error-heading" color="accent">Wpisz poprawny email.</h2>
+                <p class="mat-h3 mat-error-text">{{ registrationEmailError }}</p>
+              </mat-error>
+              <mat-icon matSuffix *ngIf="registrationSuccess">done</mat-icon>
+            </mat-form-field>
+
+            <mat-icon class="icon-error1" matSuffix *ngIf="registrationEmailError">error_outline</mat-icon>
+
+            <p class="register-label2">hasło</p>
+
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Password" type="password" required minlength="6" name="password" ngModel
+                [(ngModel)]="registrationInfo.password">
+              <!-- <mat-error *ngIf="registrationPasswordError">{{ registrationPasswordError }}</mat-error> -->
+              <mat-error class="mat-error mat-error-reset" *ngIf="registrationPasswordError">
+                <h2 class="mat-h3 mat-error-heading" color="accent">Wpisz hasło.</h2>
+                <p class="mat-h3 mat-error-text">{{ registrationPasswordError }}</p>
+              </mat-error>
+              <mat-icon matSuffix *ngIf="registrationSuccess">done</mat-icon>
+            </mat-form-field>
+
+            <mat-icon class="icon-error2" matSuffix *ngIf="registrationPasswordError">error_outline</mat-icon>
+
+            <p class="register-label3">hasło</p>
+            <mat-form-field appearance="outline">
+              <input matInput placeholder="Password" type="password" required minlength="8" name="repassword" ngModel
+                [(ngModel)]="passwordConfirmation">
+              <mat-error class="mat-error mat-error-reset" *ngIf="registrationMismatchError">
+                <h2 class="mat-h3 mat-error-heading" color="accent">Powtórz hasło.</h2>
+                <p class="mat-h3 mat-error-text">{{ registrationMismatchError }}</p>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-icon class="icon-error3" matSuffix *ngIf="registrationMismatchError">error_outline</mat-icon>
+
+            <button mat-raised-button color="primary" class="login-button">
+              Sign Up
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+
+    <!-- Reset Password -->
+    <mat-tab-group color="accent" mat-stretch-tabs="false" mat-align-tabs="center" class="tabs"
+      *ngIf="resetPasswordMode">
+      <mat-tab label="Zresetuj hasło">
+        <mat-card-content>
+          <form *ngIf="!resetSuccess">
+            <p class="reset-label">login/e-mail</p>
+            <mat-form-field style="margin-top: 40px;" appearance="outline" class="form-field">
+              <input matInput placeholder="Email" required name="email" ngModel [(ngModel)]="emailInfo.email">
+              <mat-error class="mat-error mat-error-reset" *ngIf="forgotPasswordError">
+                <h2 class="mat-h3 mat-error-heading" color="accent">Wpisz poprawny email.</h2>
+                <p class="mat-h3 mat-error-text">{{ forgotPasswordError }}</p>
+              </mat-error>
+            </mat-form-field>
+
+            <mat-icon class="icon-question" matSuffix>help_outline</mat-icon>
+            <div class="info-field">
+              <h2 class="mat-h3 mat-question-heading" color="accent">Lorem ipsum dolor sit amet</h2>
+              <p class="mat-h3 mat-question-text">Alias est illum velit corporis aliquid? Dicta neque, exercitationem
+                accusamus.</p>
+            </div>
+
+            <p mat-raised-button color="primary" class="button-to-login" (click)="toggleResetPasswordMode()">
+              wróć do logowania
+            </p>
+
+            <button mat-raised-button color="primary" class="login-button" (click)="resetPassword()">
+              Resetuj Hasło
+            </button>
+          </form>
+
+          <h2 *ngIf="resetSuccess" class="reset-success-message">Lorem, ipsum dolor!</h2>
+        </mat-card-content>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>
